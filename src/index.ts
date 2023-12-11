@@ -1,13 +1,15 @@
-let employee: {
-    id: number,
+type Employee = {
+    readonly id: number,
     name: string,
     // if optional name
     // name?: string
     retire: (date: Date) => void
-} = {
-        id: 1,
-        name: 'Mosh',
-        retire: (date: Date) =>{
+}
+
+let employee: Employee = {
+    id: 1,
+    name: 'Mosh',
+    retire: (date: Date) => {
         console.log(date)
     }
 }

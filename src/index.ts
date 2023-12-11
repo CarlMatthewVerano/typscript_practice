@@ -1,22 +1,26 @@
-let sales: number = 123_456_789;
-let course: string = 'TypeScript';
-let is_published: boolean = true;
+// let numbers: number[] = [1, 2, 3];
 
-//We don't always have to explicitly declare the types
-//It can infer the types based on value
-/* Alternate:
-    let sales = 123_456_789;
-    let course = 'TypeScript';
-    let is_published = true;
-*/
+// This is an error: let numbers: number[] = [1, 2, '3'];
 
-// Type Any occurs when you don't initialize the type
-// Defeats the purpose of using type
-let level;
-level = 1;
+// You can remove the number type declaration since every element in
+// array is a number. let numbers = [1, 2, 3];
 
-// For any types in parameters, you need to explicitly indicate 'any'
-// if you want to avoid any errors; unless you change tsconfig.json
-function render(document: any){
-    console.log(document);
-}
+// Though this is bad if for example each element was equated
+// a value of a different type. Thus should declare explicitly.
+// EX:
+// let numbers = []
+// numbers[0] = 1;
+// numbers[1] = '1'
+
+// Proper:
+let numbers: number[] = [];
+
+// Also has intellisense in ts, such as toFixed since it knows it's a number
+numbers.forEach(n => n.toFixed)
+
+// Tuples can have different type declarations at the same time
+let user: [number, string] = [1, 'Mosh']
+user[1].split
+
+// This is a gap in ts, you can push to a tuple despite being fixed
+user.push(1);

@@ -1,18 +1,14 @@
 function kbToLbs(weight: number | string): number{
-    let num: number = 0
     // Narrowing
     if(typeof weight === 'number'){
-        num = 1;
-        console.log(num);
         return weight * 2.2
     }else{
-        num = 2;
-        console.log(num);
+        // Note: this returns 22 now, since parseInt only parses valid numbers until it hits a non-number
         return parseInt(weight) * 2.2
     }
 
         
 }
 
-kbToLbs(10)
-kbToLbs('10kg')
+console.log(kbToLbs(10))
+console.log(kbToLbs('10kg'))
